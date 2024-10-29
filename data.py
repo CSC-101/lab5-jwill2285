@@ -12,18 +12,30 @@ class Time:
         self.hour = hour
         self.minute = minute
         self.second = second
-
-
     # Provide a developer-friendly string representation of the object.
     # input: Time for which a string representation is desired. 
     # output: string representation
-
 
     # Compare the Time object with another value to determine equality.
     # input: Time against which to compare
     # input: Another value to compare to the Time
     # output: boolean indicating equality
+    def __eq__(self, other:Any)->bool:
+        #checks if each of the hour, minute, and second calls are the same for both. If all true
+        #returns true, if not returns false
+        if self.hour == other.hour and self.minute == other.minute and self.second == other.second:
+            return True
+        else:
+            return False
 
+
+    def __str__(self):
+        #returns the current time using the .format after the string, returns a string
+        return "The Current Time is: {}:{}:{},".format(self.hour,self.minute,self.second)
+
+    def __repr__(self)->str:
+        # returns the current time using the .format after the string, returns a string
+        return "The Current Time is: {}:{}:{}".format(self.hour,self.minute,self.second)
 
 
 

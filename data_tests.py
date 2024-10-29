@@ -17,13 +17,26 @@ class TestCases(unittest.TestCase):
         self.assertEqual(19, time.minute)
         self.assertEqual(45, time.second)
 
-
     #### Add tests for Time.__eq__
-
+    def test_Time_eq(self):
+        input1 = data.Time(9,10,11)
+        input2 = data.Time(9,10,11)
+        self.assertEqual(input1,input2)
+    def test_Time_eq_2(self):
+        input1 = data.Time(4,19,45)
+        input2 = data.Time(5,19,45)
+        self.assertNotEqual(input1,input2)
+    def test_Time_repr(self):
+        input = data.Time(10,20,30)
+        expected = "The Current Time is: 10:20:30"
+        result = repr(input)
+        self.assertEqual(expected,result)
+    def test_Time_repr_2(self):
+        input = data.Time(3,3,3)
+        expected = "The Current Time is: 3:3:3"
+        result = repr(input)
+        self.assertEqual(expected,result)
     #### Add tests for Time.__repr__
-
-
-
 
     #### Point tests
     def test_Point_1(self):
